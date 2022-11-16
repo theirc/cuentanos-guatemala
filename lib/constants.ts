@@ -1,14 +1,12 @@
 import { AlgoliaSearchIndex } from '@ircsignpost/signpost-base/dist/src/search-common';
 import { LatLngExpression } from 'leaflet';
 
-export const SITE_TITLE = 'TODO';
+export const SITE_TITLE = 'Cuentanos Guatemala';
 
-// TODO: add the country id of the instance to fetch the data from the cms for the service-map;
-export const COUNTRY_ID = 123;
+export const COUNTRY_ID = 18;
 
-// TODO: add the default coords for the center of the map
 export const MAP_DEFAULT_COORDS: LatLngExpression = [
-  34.45830721078611, 65.09457416213823,
+  15.833744778517223, -90.29889483255994,
 ];
 
 // Cache statically generated pages for 1 hour. The timeout was chosen
@@ -30,8 +28,12 @@ export const USE_CAT_SEC_ART_CONTENT_STRUCTURE = false;
 
 // A mapping from category ID to a Material icon for that category.
 export const CATEGORY_ICON_NAMES: { [key: string]: string } = {
-  /* TODO */
-  '123': 'home_work', // Placeholder
+  '7643108424605': 'miscellaneous_services',
+  '5815017969309': 'campaign',
+  '5814981856285': 'local_hospital',
+  '5815144815133': 'transfer_within_a_station',
+  '5814959184285': 'perm_device_information',
+  '5815060952477': 'work',
 };
 
 // A mapping from section ID to a Material icon for that section.
@@ -49,8 +51,7 @@ export const CATEGORIES_TO_HIDE: number[] = [
 // https://developer.zendesk.com/api-reference/ticketing/account-configuration/locales/
 // Keep in sync with locales configured in /next.config.js.
 export const DYNAMIC_CONTENT_LOCALES: { [key: string]: number } = {
-  'en-us': 1, // English locale id
-  // TODO: Add any other IDs needed
+  es: 2,
 };
 
 export const ZENDESK_AUTH_HEADER = {
@@ -70,10 +71,9 @@ export const GOOGLE_ANALYTICS_IDS = [
 export const ALGOLIA_SEARCH_APP_ID = 'BWATZIXLX6';
 export const ALGOLIA_SEARCH_API_KEY = '0d9093280e7b2bc2b6ca12ed4180fd0a';
 
-// TODO: create Algolia indexes for Articles and Queries and replace the names here.
-// See README for more info on how to create indexes.
-export const ALGOLIA_ARTICLE_INDEX_NAME = 'TODO'; // TODO: replace article index name, e.g. 'zendesk_signpost-afghanistan_articles'.
-export const ALGOLIA_QUERY_INDEX_NAME = 'TODO'; // TODO: replace query index name, e.g. 'zendesk_signpost-afghanistan_articles_query_suggestions'.
+export const ALGOLIA_ARTICLE_INDEX_NAME = 'zendesk_signpost-guatemala_articles';
+export const ALGOLIA_QUERY_INDEX_NAME =
+  'zendesk_signpost-guatemala_articles_query_suggestions';
 
 export const SEARCH_BAR_INDEX: AlgoliaSearchIndex = {
   appId: ALGOLIA_SEARCH_APP_ID,
