@@ -15,7 +15,6 @@ export const MAP_DEFAULT_COORDS: LatLngExpression = [
 export const REVALIDATION_TIMEOUT_SECONDS: number = 1 * 60 * 60;
 
 // The "about us" article ID.
-//
 // TODO
 export const ABOUT_US_ARTICLE_ID: number = 123;
 
