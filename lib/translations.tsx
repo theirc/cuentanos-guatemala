@@ -34,19 +34,22 @@ export const COMMON_DYNAMIC_CONTENT_PLACEHOLDERS = [
   'default_download',
   'default_last_updated',
   'default_article_reader_title',
+  'default_banner_link_share_title',
 ];
 
 export const HOME_PAGE_DYNAMIC_CONTENT_PLACEHOLDERS = [
   // Header banner and social media strings.
-  /*
-   * TODO: create Dynamic content ID for mission statement.
-  '<website_name>_mission_statement',
-   */
+  'CuentaNos_Guatemala_mission_statement',
   'default_banner_social_media_title',
   'default_banner_social_media_description',
   'default_banner_facebook_title',
   'default_banner_messenger_title',
   'default_banner_whatsapp_title',
+  'default_banner_instagram_title',
+  'CuentaNos_Guatemala_instagram_link',
+  'CuentaNos_Guatemala_facebook_link',
+  'CuentaNos_Guatemala_whatsapp_link',
+  'CuentaNos_Guatemala_messenger_link',
   // Main body strings.
   'default_information_title',
   'default_information_description',
@@ -62,9 +65,9 @@ export const HOME_PAGE_DYNAMIC_CONTENT_PLACEHOLDERS = [
   'default_service_map_map_tab',
   'default_service_map_list_tab',
   'default_service_map_all_services',
-  'default_service_map_all_regions_option',
-  'default_service_map_all_cities_option',
-  'default_service_map_all_categories_option',
+  'DEFAULT_SERVICE_MAP_ALL_REGIONS_OPTION',
+  'DEFAULT_SERVICE_MAP_ALL_CITIES_OPTION',
+  'DEFAULT_SERVICE_MAP_ALL_CATEGORIES_OPTION',
   'default_service_map_my_location_option',
 ];
 
@@ -87,25 +90,25 @@ export const ERROR_DYNAMIC_CONTENT_PLACEHOLDERS = [
   'default_error_home_button_title',
 ];
 
-// TODO: Ask your Product manager to get Social media links.
 export function populateSocialMediaLinks(dynamicContent: {
   [key: string]: string;
 }): SocialMediaLinks {
   return {
     facebookLink: {
       title: dynamicContent['default_banner_facebook_title'],
-      // TODO: create Dynamic content with link to Facebook page
-      href: '', // dynamicContent['<site_prefix>_facebook_link']
+      href: dynamicContent['CuentaNos_Guatemala_facebook_link'],
     },
     whatsappLink: {
       title: dynamicContent['default_banner_whatsapp_title'],
-      // TODO: create Dynamic content with link to Whatsapp page
-      href: '', // dynamicContent['<site_prefix>_whatsapp_link']
+      href: dynamicContent['CuentaNos_Guatemala_whatsapp_link'],
     },
     messengerLink: {
       title: dynamicContent['default_banner_messenger_title'],
-      // TODO: create Dynamic content with link to Messenger page
-      href: '', // dynamicContent['<site_prefix>_messenger_link']
+      href: dynamicContent['CuentaNos_Guatemala_messenger_link'],
+    },
+    instagramLink: {
+      title: dynamicContent['default_banner_instagram_title'],
+      href: dynamicContent['CuentaNos_Guatemala_instagram_link'],
     },
   };
 }
@@ -114,8 +117,7 @@ export function populateHeaderBannerStrings(dynamicContent: {
   [key: string]: string;
 }): HeaderBannerStrings {
   return {
-    // TODO: replace welcomeTitle with website-specific Dynamic content ID.
-    welcomeTitle: 'Welcome text.', // dynamicContent['<site_prefix>_mission_statement'],
+    welcomeTitle: dynamicContent['CuentaNos_Guatemala_mission_statement'],
     socialMediaTitle: dynamicContent['default_banner_social_media_title'],
     socialMediaDescription:
       dynamicContent['default_banner_social_media_description'],
@@ -139,10 +141,10 @@ export function populateServiceMapStrings(dynamicContent: {
       dynamicContent['default_services_list_count_services'],
     mapTab: dynamicContent['default_service_map_map_tab'],
     listTab: dynamicContent['default_service_map_list_tab'],
-    allRegionsOption: dynamicContent['default_service_map_all_regions_option'],
-    allCitiesOption: dynamicContent['default_service_map_all_cities_option'],
+    allRegionsOption: dynamicContent['DEFAULT_SERVICE_MAP_ALL_REGIONS_OPTION'],
+    allCitiesOption: dynamicContent['DEFAULT_SERVICE_MAP_ALL_CITIES_OPTION'],
     allCategoriesOption:
-      dynamicContent['default_service_map_all_categories_option'],
+      dynamicContent['DEFAULT_SERVICE_MAP_ALL_CATEGORIES_OPTION'],
     myLocationOption: dynamicContent['default_service_map_my_location_option'],
   };
 }
@@ -179,6 +181,7 @@ export function getShareButtonStrings(dynamicContent: {
   return {
     label: dynamicContent['default_share'],
     notificationText: dynamicContent['default_share_notification_text'],
+    linkShareButton: dynamicContent['default_banner_link_share_title'],
   };
 }
 
