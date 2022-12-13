@@ -153,18 +153,20 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const strings = populateHomePageStrings(dynamicContent);
 
   let regions = await fetchRegions(COUNTRY_ID, currentLocale.url);
-  regions.sort((a, b) => a.name.normalize().localeCompare(b.name.normalize()));
+  regions?.sort((a, b) => a.name.normalize().localeCompare(b.name.normalize()));
 
   const serviceCategories = await fetchServicesCategories(
     COUNTRY_ID,
     currentLocale.url
   );
-  serviceCategories.sort((a, b) =>
+  serviceCategories?.sort((a, b) =>
     a.name.normalize().localeCompare(b.name.normalize())
   );
 
   const services = await fetchServices(COUNTRY_ID, currentLocale.url);
-  services.sort((a, b) => a.name.normalize().localeCompare(b.name.normalize()));
+  services?.sort((a, b) =>
+    a.name.normalize().localeCompare(b.name.normalize())
+  );
 
   return {
     props: {
