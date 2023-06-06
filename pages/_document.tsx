@@ -8,6 +8,12 @@ function Document() {
           name="google-site-verification"
           content="Mu8my26wsW0Eftwy1UsrHIzUgU-Qd0XBZ-5W9n5dgZ8"
         />
+        <meta property="og:title" content="Cuentanos Guatemala" />
+        <meta property="og:description" content="Cuentanos Guatemala website" />
+        <meta
+          property="og:image"
+          content="https://guatemala.cuentanos.org/api/og-image"
+        />
         <script
           src="https://kit.fontawesome.com/027db3ea3f.js"
           crossOrigin="anonymous"
