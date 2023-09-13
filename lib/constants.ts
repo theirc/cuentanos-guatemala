@@ -44,6 +44,8 @@ export const SECTION_ICON_NAMES: { [key: string]: string } = {
 // A list of category IDs that the site should not display.
 export const CATEGORIES_TO_HIDE: number[] = [7643108424605];
 
+export const MENU_CATEGORIES_TO_HIDE: number[] = [7643108424605];
+
 // A map from a locale code to Zendesk locale id used for dynamic content translations.
 // https://developer.zendesk.com/api-reference/ticketing/account-configuration/locales/
 // Keep in sync with locales configured in /next.config.js.
@@ -83,3 +85,7 @@ export const SEARCH_RESULTS_PAGE_INDEX: AlgoliaSearchIndex = {
   publicApiKey: ALGOLIA_SEARCH_API_KEY,
   indexName: ALGOLIA_ARTICLE_INDEX_NAME,
 };
+
+export const DIRECTUS_AUTH_TOKEN = process.env.DIRECTUS_TOKEN ?? '';
+export const DIRECTUS_COUNTRY_ID = 7;
+export const DIRECTUS_INSTANCE = 'https://directus-irc.azurewebsites.net/';
