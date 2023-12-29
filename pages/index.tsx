@@ -138,27 +138,27 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     categories = await getCategoriesWithSections(
       currentLocale,
       getZendeskUrl(),
-      (c) => !CATEGORIES_TO_HIDE.includes(c.id)
+      (c) => !CATEGORIES_TO_HIDE.includes(c?.id)
     );
     categories.forEach(({ sections }) => {
       sections.forEach(
-        (s) => (s.icon = SECTION_ICON_NAMES[s.id] || 'help_outline')
+        (s) => (s.icon = SECTION_ICON_NAMES[s?.id] || 'help_outline')
       );
     });
     menuCategories = await getCategoriesWithSections(
       currentLocale,
       getZendeskUrl(),
-      (c) => !MENU_CATEGORIES_TO_HIDE.includes(c.id)
+      (c) => !MENU_CATEGORIES_TO_HIDE.includes(c?.id)
     );
   } else {
     categories = await getCategories(currentLocale, getZendeskUrl());
-    categories = categories.filter((c) => !CATEGORIES_TO_HIDE.includes(c.id));
+    categories = categories.filter((c) => !CATEGORIES_TO_HIDE.includes(c?.id));
     categories.forEach(
-      (c) => (c.icon = CATEGORY_ICON_NAMES[c.id] || 'help_outline')
+      (c) => (c.icon = CATEGORY_ICON_NAMES[c?.id] || 'help_outline')
     );
     menuCategories = await getCategories(currentLocale, getZendeskUrl());
     menuCategories = menuCategories.filter(
-      (c) => !MENU_CATEGORIES_TO_HIDE.includes(c.id)
+      (c) => !MENU_CATEGORIES_TO_HIDE.includes(c?.id)
     );
   }
 
@@ -211,7 +211,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   );
   const uniquePopulationsIdsArray = Array.from(uniquePopulationsIdsSet);
 
-  const uniqueProvidersIdsSet = new Set(services.flatMap((x) => x.provider.id));
+  const uniqueProvidersIdsSet = new Set(
+    services.flatMap((x) => x.provider?.id)
+  );
   const uniqueProvidersIdsArray = Array.from(uniqueProvidersIdsSet);
 
   const serviceTypes = await getDirectusServiceCategories(directus);
