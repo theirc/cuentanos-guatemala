@@ -1,13 +1,6 @@
 import { AlgoliaSearchIndex } from '@ircsignpost/signpost-base/dist/src/search-common';
-import { LatLngExpression } from 'leaflet';
 
 export const SITE_TITLE = 'Cuentanos Guatemala';
-
-export const COUNTRY_ID = 18;
-
-export const MAP_DEFAULT_COORDS: LatLngExpression = [
-  15.833744778517223, -90.29889483255994,
-];
 
 // Cache statically generated pages for 1 hour. The timeout was chosen
 // arbitrarily. Our website has static, non-urgent resources, so we probably do
